@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SD Tamil Nadu</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&family=Cormorant+Upright:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --noir: #111010;
+  --noir2: #181716;
+  --noir3: #201f1d;
+  --or: #b8872a;
+  --or-vif: #cc9a38;
+  --or-pale: #ddb96a;
+  --creme: #ece2cf;
+  --gris: #6e6458;
+  --ligne: rgba(184,135,42,0.18);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--noir); color:var(--creme); font-family:'Jost',sans-serif; font-weight:300; overflow-x:hidden; }
+
+/* NAV */
+nav {
+  position:fixed; inset:0 0 auto; z-index:99;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 60px; height:64px;
+  border-bottom:1px solid var(--ligne);
+  background:rgba(17,16,16,0.92);
+  backdrop-filter:blur(14px);
+}
+.logo { font-family:'Cormorant Upright',serif; font-size:1.05rem; letter-spacing:5px; color:var(--or); text-decoration:none; text-transform:uppercase; }
+.nav-links { display:flex; gap:48px; list-style:none; }
+.nav-links a { font-size:0.68rem; letter-spacing:3px; text-transform:uppercase; color:var(--gris); text-decoration:none; transition:color .3s; }
+.nav-links a:hover { color:var(--or); }
+
+/* HERO */
+.hero {
+  height:100vh; display:grid; grid-template-columns:1fr 1fr; overflow:hidden;
+}
+.hero-left {
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:0 70px 90px; position:relative; z-index:2;
+}
+.hero-eyebrow {
+  font-size:0.62rem; letter-spacing:4px; text-transform:uppercase; color:var(--or);
+  margin-bottom:28px; display:flex; align-items:center; gap:14px;
+}
+.hero-eyebrow::before { content:''; display:block; width:32px; height:1px; background:var(--or); }
+.hero-title {
+  font-family:'Cormorant',serif; font-weight:300; font-style:italic;
+  font-size:clamp(3.6rem, 6vw, 5.8rem); line-height:1.04;
+  color:var(--creme); letter-spacing:-1px;
+}
+.hero-title strong {
+  display:block; font-weight:600; font-style:normal; color:var(--or);
+  font-size:0.68em; letter-spacing:3px; text-transform:uppercase;
+  margin-bottom:10px; font-family:'Cormorant Upright',serif;
+}
+.hero-sub {
+  margin-top:32px; max-width:360px;
+  font-size:0.88rem; line-height:1.9; color:var(--gris); font-weight:300;
+}
+.hero-actions { display:flex; align-items:center; gap:32px; margin-top:52px; }
+.btn-or {
+  background:var(--or); color:var(--noir); padding:14px 38px;
+  font-size:0.66rem; letter-spacing:3px; text-transform:uppercase; font-weight:500;
+  border:none; cursor:pointer; text-decoration:none; display:inline-block;
+  transition:background .3s;
+}
+.btn-or:hover { background:var(--or-pale); }
+.btn-fil {
+  font-size:0.66rem; letter-spacing:3px; text-transform:uppercase; color:var(--gris);
+  text-decoration:none; border-bottom:1px solid rgba(110,100,88,0.4); padding-bottom:2px;
+  transition:color .3s, border-color .3s;
+}
+.btn-fil:hover { color:var(--or); border-color:var(--or); }
+.hero-right {
+  position:relative; overflow:hidden;
+  background:linear-gradient(150deg, #1a1208 0%, #2c1d0a 50%, #181210 100%);
+}
+.hero-glow {
+  position:absolute; inset:0;
+  background:radial-gradient(ellipse 70% 55% at 38% 55%, rgba(184,135,42,0.11) 0%, transparent 68%);
+}
+.hero-char {
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  font-size:22rem; color:var(--or); opacity:0.035;
+  font-family:'Cormorant',serif; user-select:none;
+}
+.hero-seam {
+  position:absolute; top:0; left:0; width:1px; height:100%; background:var(--ligne);
+}
+.hero-card {
+  position:absolute; bottom:72px; left:50%; transform:translateX(-50%);
+  border:1px solid rgba(184,135,42,0.22); padding:22px 36px;
+  background:rgba(17,16,16,0.65); backdrop-filter:blur(10px);
+  text-align:center; white-space:nowrap;
+}
+.hero-card em { display:block; font-size:0.58rem; letter-spacing:3.5px; text-transform:uppercase; color:var(--or); margin-bottom:8px; font-style:normal; }
+.hero-card p { font-family:'Cormorant',serif; font-style:italic; font-size:1.05rem; color:var(--creme); }
+
+/* MARQUEE */
+.marquee-wrap { overflow:hidden; background:var(--noir2); padding:13px 0; border-top:1px solid var(--ligne); border-bottom:1px solid var(--ligne); }
+.marquee-track { display:flex; width:max-content; animation:marquee 30s linear infinite; }
+.mitem { font-family:'Cormorant',serif; font-style:italic; font-size:0.98rem; color:var(--gris); padding:0 44px; white-space:nowrap; }
+.mdot { color:var(--or); }
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* SECTIONS */
+.sp { padding:120px 60px; }
+.mw { max-width:1180px; margin:0 auto; }
+.eyebrow {
+  font-size:0.6rem; letter-spacing:4px; text-transform:uppercase; color:var(--or);
+  display:flex; align-items:center; gap:14px; margin-bottom:22px;
+}
+.eyebrow::after { content:''; width:36px; height:1px; background:var(--or); opacity:0.5; }
+.h2 { font-family:'Cormorant',serif; font-weight:300; font-style:italic; font-size:clamp(2.3rem,3.8vw,3.6rem); line-height:1.1; color:var(--creme); }
+.h2 em { color:var(--or); }
+
+/* HISTOIRE */
+.histoire-grid { display:grid; grid-template-columns:5fr 4fr; gap:100px; align-items:start; }
+.histoire-corps { padding-top:10px; }
+.histoire-corps p { font-size:1rem; line-height:2; color:var(--gris); margin-bottom:20px; }
+.histoire-corps p em { color:var(--creme); font-style:normal; }
+.pull {
+  margin-top:52px; padding:30px 36px; border-left:2px solid var(--or); background:var(--noir2);
+}
+.pull blockquote { font-family:'Cormorant',serif; font-style:italic; font-size:1.3rem; line-height:1.65; color:var(--creme); font-weight:300; }
+.pull cite { display:block; margin-top:14px; font-size:0.6rem; letter-spacing:3px; text-transform:uppercase; color:var(--or); }
+.histoire-side { position:sticky; top:90px; }
+.visuel {
+  aspect-ratio:3/4; background:linear-gradient(145deg,#1e1508,#2e2010);
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--ligne); position:relative; overflow:hidden;
+}
+.visuel span { font-size:7rem; opacity:0.45; }
+.visuel::after {
+  content:'TAMIL NADU'; position:absolute; bottom:22px; right:22px;
+  font-family:'Cormorant Upright',serif; font-size:0.58rem; letter-spacing:4px; color:var(--or); opacity:0.5;
+}
+.chiffres { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--ligne); border:1px solid var(--ligne); border-top:none; }
+.chiffre { background:var(--noir2); padding:22px 24px; }
+.chiffre-n { font-family:'Cormorant',serif; font-size:2.1rem; color:var(--or); line-height:1; }
+.chiffre-l { font-size:0.6rem; letter-spacing:2.5px; text-transform:uppercase; color:var(--gris); margin-top:6px; }
+
+/* MENU */
+.menu-sec { background:var(--noir2); }
+.menu-top { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:56px; gap:32px; flex-wrap:wrap; }
+.tabs { display:flex; border:1px solid var(--ligne); }
+.tab { padding:10px 24px; font-size:0.63rem; letter-spacing:3px; text-transform:uppercase; color:var(--gris); background:transparent; border:none; border-right:1px solid var(--ligne); cursor:pointer; transition:all .25s; white-space:nowrap; }
+.tab:last-child { border-right:none; }
+.tab.on { background:var(--or); color:var(--noir); }
+.tab:hover:not(.on) { color:var(--creme); }
+.menu-liste { display:flex; flex-direction:column; }
+.entree {
+  display:grid; grid-template-columns:1fr auto; align-items:baseline; gap:24px;
+  padding:28px 0; border-bottom:1px solid var(--ligne); position:relative;
+}
+.entree:first-child { border-top:1px solid var(--ligne); }
+.entree::before {
+  content:''; position:absolute; left:-60px; top:0; bottom:0; width:0;
+  background:rgba(184,135,42,0.035); transition:width .35s ease;
+}
+.entree:hover::before { width:calc(100% + 120px); }
+.entree-l { display:flex; flex-direction:column; gap:9px; }
+.en { font-family:'Cormorant',serif; font-size:1.3rem; color:var(--creme); display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.badge { font-size:0.52rem; letter-spacing:2.5px; text-transform:uppercase; color:var(--or); border:1px solid rgba(184,135,42,0.4); padding:2px 8px; font-family:'Jost',sans-serif; }
+.desc { font-size:0.8rem; color:var(--gris); line-height:1.75; max-width:580px; }
+.entree-r { display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+.prix { font-family:'Cormorant',serif; font-size:1.25rem; color:var(--or); white-space:nowrap; }
+.piment { display:flex; gap:3px; }
+.p { width:5px; height:5px; border-radius:50%; background:rgba(184,135,42,0.2); }
+.p.on { background:var(--or); }
+
+/* RÉSERVATION */
+.resa-sec { position:relative; overflow:hidden; }
+.resa-fond {
+  position:absolute; inset:0;
+  background:linear-gradient(140deg,#0f0d08 0%,#111010 55%,#0f0d08 100%);
+}
+.resa-fond::after {
+  content:''; position:absolute; top:-30%; right:-15%;
+  width:700px; height:700px; border-radius:50%;
+  background:radial-gradient(circle,rgba(184,135,42,0.055) 0%,transparent 65%);
+}
+.resa-rel { position:relative; z-index:1; }
+.resa-grille { display:grid; grid-template-columns:1fr 1.2fr; min-height:580px; gap:0; }
+.resa-g {
+  padding:80px 72px 80px 0; border-right:1px solid var(--ligne);
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.resa-manifeste { font-size:0.92rem; line-height:2; color:var(--gris); margin:28px 0 48px; }
+.resa-manifeste em { color:var(--creme); font-style:normal; }
+.h-titre { font-size:0.6rem; letter-spacing:3.5px; text-transform:uppercase; color:var(--or); margin-bottom:18px; }
+.h-row { display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--ligne); font-size:0.82rem; }
+.h-row .j { color:var(--gris); }
+.h-row .h { font-family:'Cormorant',serif; font-style:italic; font-size:0.95rem; color:var(--creme); }
+
+.resa-d { padding:80px 0 80px 72px; }
+.form-titre { font-family:'Cormorant',serif; font-style:italic; font-size:1.75rem; color:var(--creme); margin-bottom:38px; }
+.champ { display:flex; flex-direction:column; gap:9px; margin-bottom:22px; }
+.champ label { font-size:0.58rem; letter-spacing:3px; text-transform:uppercase; color:var(--gris); }
+.champ input, .champ select, .champ textarea {
+  background:transparent; border:none; border-bottom:1px solid var(--ligne);
+  color:var(--creme); font-family:'Cormorant',serif; font-size:1.05rem; font-style:italic;
+  padding:10px 0; outline:none; transition:border-color .3s; width:100%;
+}
+.champ input::placeholder { color:var(--gris); font-style:italic; }
+.champ input:focus, .champ select:focus, .champ textarea:focus { border-color:var(--or); }
+.champ select { cursor:pointer; appearance:none; }
+.champ select option { background:var(--noir2); font-style:normal; }
+.champ textarea { resize:none; }
+.rangee { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+/* Calendrier */
+.cal { margin:26px 0 20px; border:1px solid var(--ligne); }
+.cal-nav { display:flex; align-items:center; justify-content:space-between; padding:13px 18px; border-bottom:1px solid var(--ligne); }
+.cal-nav button { background:transparent; border:none; color:var(--or); cursor:pointer; font-size:1.1rem; width:28px; height:28px; display:flex; align-items:center; justify-content:center; opacity:0.65; transition:opacity .2s; }
+.cal-nav button:hover { opacity:1; }
+.cal-mois { font-family:'Cormorant Upright',serif; font-size:0.82rem; letter-spacing:3.5px; text-transform:uppercase; color:var(--creme); }
+.cal-ent { display:grid; grid-template-columns:repeat(7,1fr); border-bottom:1px solid var(--ligne); }
+.cal-ent span { padding:8px 0; text-align:center; font-size:0.56rem; letter-spacing:2px; text-transform:uppercase; color:var(--gris); }
+.cal-body { display:grid; grid-template-columns:repeat(7,1fr); }
+.jour {
+  aspect-ratio:1; display:flex; align-items:center; justify-content:center;
+  font-family:'Cormorant',serif; font-size:0.92rem; cursor:pointer;
+  border:1px solid transparent; margin:-0.5px; color:var(--gris);
+  transition:color .2s, border-color .2s;
+}
+.jour:hover:not(.inact):not(.plein):not(.vide) { color:var(--or); border-color:var(--ligne); }
+.jour.auj { color:var(--creme); }
+.jour.choisi { background:var(--or); color:var(--noir) !important; border-color:var(--or); }
+.jour.plein { opacity:0.28; cursor:not-allowed; text-decoration:line-through; }
+.jour.inact { color:#2e2a26; cursor:not-allowed; }
+.jour.vide { cursor:default; }
+.cal-retour { font-size:0.7rem; color:var(--or); letter-spacing:1.5px; min-height:18px; margin-bottom:18px; }
+
+/* Créneaux */
+.creneaux-lbl { font-size:0.58rem; letter-spacing:3px; text-transform:uppercase; color:var(--gris); margin-bottom:12px; }
+.creneaux { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:26px; }
+.creneau {
+  padding:7px 15px; border:1px solid var(--ligne);
+  font-family:'Cormorant',serif; font-style:italic; font-size:0.9rem; color:var(--gris);
+  cursor:pointer; transition:all .2s;
+}
+.creneau:hover:not(.pris) { border-color:var(--or); color:var(--or); }
+.creneau.actif { background:var(--or); border-color:var(--or); color:var(--noir); }
+.creneau.pris { opacity:0.28; cursor:not-allowed; text-decoration:line-through; }
+
+.btn-valider {
+  width:100%; padding:15px; background:var(--or); color:var(--noir); border:none; cursor:pointer;
+  font-size:0.66rem; letter-spacing:3px; text-transform:uppercase; font-weight:500;
+  transition:background .3s; margin-top:6px;
+}
+.btn-valider:hover { background:var(--or-pale); }
+.notif { margin-top:18px; padding:14px 18px; font-size:0.78rem; letter-spacing:0.4px; display:none; line-height:1.6; }
+.notif.ok { border-left:2px solid var(--or); background:rgba(184,135,42,0.07); color:var(--or-pale); display:block; }
+.notif.ko { border-left:2px solid #9a4040; background:rgba(154,64,64,0.07); color:#c07878; display:block; }
+
+/* Journal réservations */
+.journal { margin-top:36px; }
+.journal-titre { font-size:0.58rem; letter-spacing:3.5px; text-transform:uppercase; color:var(--gris); margin-bottom:14px; }
+.log { font-size:0.78rem; color:var(--gris); padding:10px 0; border-bottom:1px solid var(--ligne); font-family:'Cormorant',serif; font-style:italic; }
+.log strong { color:var(--creme); font-style:normal; }
+
+/* FOOTER */
+footer {
+  background:var(--noir); border-top:1px solid var(--ligne); padding:60px 60px 40px;
+}
+.footer-corps { max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:32px; }
+.footer-logo { font-family:'Cormorant Upright',serif; font-size:2rem; letter-spacing:5px; color:var(--or); display:block; margin-bottom:10px; }
+.footer-baseline { font-size:0.78rem; color:var(--gris); font-style:italic; font-family:'Cormorant',serif; }
+.footer-nav { display:flex; gap:36px; }
+.footer-nav a { font-size:0.62rem; letter-spacing:2.5px; text-transform:uppercase; color:var(--gris); text-decoration:none; transition:color .25s; }
+.footer-nav a:hover { color:var(--or); }
+.footer-bas { max-width:1180px; margin:28px auto 0; border-top:1px solid var(--ligne); padding-top:24px; display:flex; justify-content:space-between; }
+.footer-bas span { font-size:0.6rem; letter-spacing:2px; color:#333028; text-transform:uppercase; }
+
+/* REVEAL */
+[data-v] { opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s ease; }
+[data-v].vis { opacity:1; transform:none; }
+[data-v="1"] { transition-delay:.12s; }
+[data-v="2"] { transition-delay:.24s; }
+[data-v="3"] { transition-delay:.36s; }
+
+@media (max-width:900px) {
+  nav { padding:0 24px; }
+  .nav-links { display:none; }
+  .hero { grid-template-columns:1fr; }
+  .hero-right { display:none; }
+  .hero-left { padding:0 28px 72px; }
+  .sp { padding:80px 24px; }
+  .histoire-grid, .resa-grille { grid-template-columns:1fr; gap:60px; }
+  .resa-g { border-right:none; border-bottom:1px solid var(--ligne); padding:0 0 60px; }
+  .resa-d { padding:60px 0 0; }
+  .rangee { grid-template-columns:1fr; gap:0; }
+  footer { padding:48px 24px 32px; }
+  .footer-corps { flex-direction:column; align-items:flex-start; }
+  .entree::before { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">SD Tamil Nadu</a>
+  <ul class="nav-links">
+    <li><a href="#histoire">Histoire</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#reservation">Réservation</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Cuisine du sud de l'Inde et Sri-lanka</div>
+    <h1 class="hero-title">
+      <strong>SD Tamil Nadu</strong>
+      L'art des<br>épices ancestrales
+    </h1>
+    <p class="hero-sub">Seul restaurant Sud-indien & sri-lankais à Amiens .<br>
+      Saveur authentiques d'Inde du Sud & du Sri-Lanka
+    </p>
+    <div class="hero-actions">
+      <a href="#reservation" class="btn-or">Réserver une table</a>
+      <a href="#menu" class="btn-fil">Découvrir la carte</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-glow"></div>
+    <div class="hero-seam"></div>
+    <div class="hero-char"></div>
+    <div class="hero-card">
+   <img src="logosd.png" alt="Logo" width="350">
+      <em>Notre promesse</em>
+      <p>Recettes authentiques, épices sélectionnées à la main</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="mitem">Chettinad Curry <span class="mdot">·</span></span>
+    <span class="mitem">Biryani Tamil <span class="mdot">·</span></span>
+    <span class="mitem">Dosa Masala <span class="mdot">·</span></span>
+    <span class="mitem">Rasam ancestral <span class="mdot">·</span></span>
+    <span class="mitem">Épices de Chennai <span class="mdot">·</span></span>
+    <span class="mitem">Cuisine de mémoire <span class="mdot">·</span></span>
+    <span class="mitem">Chettinad Curry <span class="mdot">·</span></span>
+    <span class="mitem">Biryani Tamil <span class="mdot">·</span></span>
+    <span class="mitem">Dosa Masala <span class="mdot">·</span></span>
+    <span class="mitem">Rasam ancestral <span class="mdot">·</span></span>
+    <span class="mitem">Épices de Chennai <span class="mdot">·</span></span>
+    <span class="mitem">Cuisine de mémoire <span class="mdot">·</span></span>
+  </div>
+</div>
+
+<!-- HISTOIRE -->
+<section id="histoire" class="sp">
+  <div class="mw">
+    <div class="histoire-grid">
+      <div class="histoire-corps">
+        <div class="eyebrow" data-v>Notre histoire</div>
+        <h2 class="h2" data-v="1">Une cuisine <em>transmise</em><br>de génération en génération</h2>
+        <div style="margin-top:44px" data-v="2">
+          <p>SD Tamil Nadu est né d'une conviction : que la grande cuisine indienne mérite la même rigueur, le même respect du produit et la même exigence que n'importe quelle table gastronomique. Nos recettes, héritées du fin fond du Tamil Nadu, n'ont jamais été <em>adaptées</em> — elles ont été <em>préservées</em>.</p>
+          <p>Chaque plat est le fruit d'un équilibre précis entre épices, textures et cuissons lentes. Le Chettinad, région réputée pour l'intensité de sa cuisine, nous a appris que la complexité naît de la patience.</p>
+        </div>
+        <div class="pull" data-v="3">
+          <blockquote>« La cuisine TAMIL ne cherche pas à séduire — elle cherche à émouvoir. Chaque cuillère qui porte l'histoire d'un territoire. »</blockquote>
+          <cite>— Le Chef, SD Tamil Nadu</cite>
+        </div>
+      </div>
+      <div class="histoire-side" data-v="2">
+        <div class="visuel"><span>🌿</span></div>
+        <div class="chiffres">
+          <div class="chiffre"><div class="chiffre-n">?<small style="font-size:1rem;color:var(--gris)"> ans</small></div><div class="chiffre-l">D'expérience</div></div>
+          <div class="chiffre"><div class="chiffre-n">?<small style="font-size:1rem;color:var(--gris)">%</small></div><div class="chiffre-l">Épices authentiques</div></div>
+          <div class="chiffre"><div class="chiffre-n">?<small style="font-size:1rem;color:var(--gris)">+</small></div><div class="chiffre-l">Références au menu</div></div>
+          <div class="chiffre"><div class="chiffre-n">★ ?</div><div class="chiffre-l">Avis clients</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="menu-sec sp">
+  <div class="mw">
+    <div class="menu-top">
+      <div>
+        <div class="eyebrow" data-v>La carte</div>
+        <h2 class="h2" data-v="1">Notre <em>gastronomie</em></h2>
+      </div>
+      <div class="tabs" data-v="2">
+        <button class="tab on" onclick="onglet('entrees',this)">Entrées</button>
+        <button class="tab" onclick="onglet('plats',this)">Plats</button>
+        <button class="tab" onclick="onglet('pains',this)">Pains & Riz</button>
+        <button class="tab" onclick="onglet('desserts',this)">Desserts</button>
+      </div>
+    </div>
+
+    <!-- ENTRÉES -->
+    <div id="entrees" class="menu-liste pane">
+      <div class="entree" data-v><div class="entree-l"><div class="en">Samossas de légumes <span class="badge">Végétarien</span></div><div class="desc">Croustillants feuilletés garnis de pommes de terre épicées, petits pois et gingembre frais — servis avec chutney de coriandre vive.</div></div><div class="entree-r"><div class="prix">7,50 €</div><div class="piment"><div class="p on"></div><div class="p"></div><div class="p"></div></div></div></div>
+      <div class="entree" data-v="1"><div class="entree-l"><div class="en">Dosa Masala <span class="badge">Signature</span></div><div class="desc">Fine crêpe de riz fermentée, croustillante et dorée, garnie d'une préparation de pommes de terre au curcuma, graines de moutarde et feuilles de curry fraîches.</div></div><div class="entree-r"><div class="prix">9,00 €</div><div class="piment"><div class="p on"></div><div class="p on"></div><div class="p"></div></div></div></div>
+      <div class="entree" data-v="2"><div class="entree-l"><div class="en">Soupe Rasam</div><div class="desc">Bouillon tamoul ancestral au tamarin, tomates confites et poivre noir de Tellicherry — profond, réconfortant, aux épices du sud.</div></div><div class="entree-r"><div class="prix">6,50 €</div><div class="piment"><div class="p on"></div><div class="p on"></div><div class="p on"></div></div></div></div>
+      <div class="entree" data-v="3"><div class="entree-l"><div class="en">Vada aux lentilles noires <span class="badge">Végétarien</span></div><div class="desc">Beignets aériens de lentilles Urad, oignons ciselés, piment vert et feuilles de curry — accompagnés de sambar chaud et chutney de coco.</div></div><div class="entree-r"><div class="prix">8,00 €</div><div class="piment"><div class="p on"></div><div class="p on"></div><div class="p"></div></div></div></div>
+      <div class="entree" data-v><div class="entree-l"><div class="en">Pakoras de chou-fleur</div><div class="desc">Fleurettes enrobées de pâte à la farine de pois chiche, épices douces et fenugrec — frits à la minute, servis avec chutney de tamarin.</div></div><div class="entree-r"><div class="prix">8,50 €</div><div class="piment"><div class="p on"></div><div class="p"></div><div class="p"></div></div></div></div>
+    </div>
+
+    <!-- PLATS -->
+    <div id="plats" class="menu-liste pane" style="display:none">
+      <div class="entree" data-v><div class="entree-l"><div class="en">Chettinad Poulet Curry <span class="badge">Signature</span></div><div class="desc">Poulet de ferme mariné aux épices Chettinad — kalpasi, pierre-de-fleur, noix de coco torréfiée — mijoté lentement jusqu'à intensité absolue. Le plat emblématique de notre maison.</div></div><div class="entree-r"><div class="prix">16,50 €</div><div class="piment"><div class="p on"></div><div class="p on"></div><div class="p on"></div></div></div></div>
+      <div class="entree" data-v="1"><div class="entree-l"><div class="en">Curry de Poisson au tamarin</div><div class="desc">Filets de poisson frais dans une sauce réduite au tamarin et tomates, piment rouge de Guntur, curcuma frais. Une recette côtière transmise sans modification.</div></div><div class="entree-r"><div class="prix">18,00 €</div><div class="piment"><div class="p on"></div><div class="p on"></div><div class="p on"></div></div></div></div>
+      <div class="entree" data-v="2"><div class="entree-l"><div class="en">Dal Tadka <span class="badge">Végétarien</span></div><div class="desc">Lentilles jaunes cuites longuement, finies d'un tarka au ghee clarifié, cumin doré, ail et piment vert. La quintessence de la cuisine de maison indienne.</div></div><div class="entree-r"><div class="prix">13,50 €</div><div class="piment"><div class="p on"></div><div class="p"></div><div class="p"></div></div></div></div>
+      <div class="entree" data-v="3"><div class="entree-l"><div class="en">Biryani Tamil Nadu <span class="badge">Signature</span></div><div class="desc">Riz basmati vieilli cuit en dum avec poulet ou agneau, safran de Cachemire, menthe fraîche, oignons frits et épices entières. Cuisson hermétique pour une intensité maximale.</div></div><div class="entree-r"><div class="prix">17,50 €</div><div class="piment"><div class="p on"></div><div class="p on"></div><div class="p"></div></div></div></div>
+      <div class="entree" data-v><div class="entree-l"><div class="en">Agneau Rogan Josh</div><div class="desc">Morceaux d'agneau fondants, cuits à la cannelle de Ceylan, cardamome noire, clou de girofle et paprika doux de Cachemire. Deux heures de cuisson pour une chair qui se défait.</div></div><div class="entree-r"><div class="prix">20,00 €</div><div class="piment"><div class="p on"></div><div class="p on"></div><div class="p"></div></div></div></div>
+      <div class="entree" data-v="1"><div class="entree-l"><div class="en">Crevettes Masala</div><div class="desc">Crevettes tigrées sautées dans un masala à la noix de coco fraîche, curcuma, graines de moutarde noire et feuilles de curry. Puissant et délicat à la fois.</div></div><div class="entree-r"><div class="prix">21,00 €</div><div class="piment"><div class="p on"></div><div class="p on"></div><div class="p on"></div></div></div></div>
+    </div>
+
+    <!-- PAINS & RIZ -->
+    <div id="pains" class="menu-liste pane" style="display:none">
+      <div class="entree" data-v><div class="entree-l"><div class="en">Naan au beurre <span class="badge">Végétarien</span></div><div class="desc">Pain levé cuit au four tandoor, nappé de beurre clarifié et parsemé de graines de nigelle. Moelleux au centre, légèrement brûlé en surface.</div></div><div class="entree-r"><div class="prix">3,50 €</div></div></div>
+      <div class="entree" data-v="1"><div class="entree-l"><div class="en">Naan à l'ail et coriandre</div><div class="desc">Même base que le naan beurre, généreusement garni d'ail confit et de feuilles de coriandre fraîche ciselées.</div></div><div class="entree-r"><div class="prix">4,00 €</div></div></div>
+      <div class="entree" data-v="2"><div class="entree-l"><div class="en">Riz Basmati nature</div><div class="desc">Riz basmati vieilli, cuit à la vapeur. Grain long, léger et parfumé — l'accompagnement idéal de nos curry.</div></div><div class="entree-r"><div class="prix">3,00 €</div></div></div>
+      <div class="entree" data-v="3"><div class="entree-l"><div class="en">Paratha feuilleté au fromage <span class="badge">Végétarien</span></div><div class="desc">Pain feuilleté cuit à la plancha, garni de fromage cottage frais, graines de cumin et coriandre. Croustillant en surface, fondant à cœur.</div></div><div class="entree-r"><div class="prix">4,50 €</div></div></div>
+    </div>
+
+    <!-- DESSERTS -->
+    <div id="desserts" class="menu-liste pane" style="display:none">
+      <div class="entree" data-v><div class="entree-l"><div class="en">Kheer à la cardamome verte <span class="badge">Signature</span></div><div class="desc">Riz au lait lentement réduit, infusé à la cardamome verte de Kérala, orné de pistaches de Bronte concassées et pétales de rose séchées.</div></div><div class="entree-r"><div class="prix">6,00 €</div></div></div>
+      <div class="entree" data-v="1"><div class="entree-l"><div class="en">Gulab Jamun au sirop de rose</div><div class="desc">Petites boules de lait concentré réduit, frits dorés et imbibés d'un sirop à l'eau de rose et cardamome. Servis tièdes.</div></div><div class="entree-r"><div class="prix">5,50 €</div></div></div>
+      <div class="entree" data-v="2"><div class="entree-l"><div class="en">Kulfi Mangue Alphonso</div><div class="desc">Glace indienne dense à la pulpe de mangue Alphonso — la reine des mangues — réduite au lait entier. Servie sur bâtonnet avec coulis de fruit de la passion.</div></div><div class="entree-r"><div class="prix">6,50 €</div></div></div>
+      <div class="entree" data-v="3"><div class="entree-l"><div class="en">Halwa de semoule à la pistache</div><div class="desc">Semoule fine torréfiée au ghee avec sucre de canne brut, safran et pistaches concassées. Un dessert chaud, riche et profondément réconfortant.</div></div><div class="entree-r"><div class="prix">5,00 €</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RÉSERVATION -->
+<section id="reservation" class="resa-sec sp">
+  <div class="resa-fond"></div>
+  <div class="mw resa-rel">
+    <div class="eyebrow" data-v>Table</div>
+    <div class="resa-grille">
+
+      <div class="resa-g">
+        <div>
+          <h2 class="h2" data-v="1">Réserver<br><em>votre repas</em></h2>
+          <p class="resa-manifeste" data-v="2">Chaque service est pensé comme une <em>expérience complète</em>. Nous limitons le nombre de couverts pour garantir une attention particulière à chaque table.</p>
+          <div data-v="3">
+      <div class="h-titre">Horaires d'ouverture</div>
+
+<div class="h-row">
+  <span class="j">Lundi</span>
+  <span class="h">11h – 15h · 18h – 22h</span>
+</div>
+
+<div class="h-row">
+  <span class="j">Mardi</span>
+  <span class="h">11h – 15h · 18h – 22h</span>
+</div>
+
+<div class="h-row">
+  <span class="j">Mercredi</span>
+  <span class="h">11h – 15h · 18h – 22h</span>
+</div>
+
+<div class="h-row">
+  <span class="j">Jeudi</span>
+  <span class="h">11h – 15h · 18h – 22h30</span>
+</div>
+
+<div class="h-row">
+  <span class="j">Vendredi</span>
+  <span class="h">11h – 15h · 18h – 22h30</span>
+</div>
+
+<div class="h-row">
+  <span class="j">Samedi</span>
+  <span class="h">11h – 15h · 18h – 22h30</span>
+</div>
+
+<div class="h-row">
+  <span class="j">Dimanche</span>
+  <span class="h">Ouverture uniquement sur réservation</span>
+</div>
+        </div>
+        <div class="journal">
+          <div class="journal-titre">Réservations enregistrées</div>
+          <div id="journal"></div>
+        </div>
+      </div>
+
+      <div class="resa-d" data-v="2">
+        <div class="form-titre">Votre réservation</div>
+        <div class="rangee">
+          <div class="champ"><label>Nom & Prénom</label><input type="text" id="f-nom" placeholder="Jean Dupont"></div>
+          <div class="champ"><label>Téléphone</label><input type="tel" id="f-tel" placeholder="06 00 00 00 00"></div>
+        </div>
+        <div class="rangee">
+          <div class="champ">
+            <label>Nombre de couverts</label>
+            <select id="f-cvts"><option value="">— choisir —</option><option>1 couvert</option><option>2 couverts</option><option>3 couverts</option><option>4 couverts</option><option>5 couverts</option><option>6 couverts</option><option>7+ couverts</option></select>
+          </div>
+          <div class="champ">
+            <label>Service</label>
+            <select id="f-serv" onchange="refrCren()"><option value="midi">Déjeuner</option><option value="soir">Dîner</option></select>
+          </div>
+        </div>
+
+        <div class="cal">
+          <div class="cal-nav">
+            <button onclick="navM(-1)">‹</button>
+            <span class="cal-mois" id="cal-lbl"></span>
+            <button onclick="navM(1)">›</button>
+          </div>
+          <div class="cal-ent">
+            <span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>
+          </div>
+          <div class="cal-body" id="cal-body"></div>
+        </div>
+        <div class="cal-retour" id="cal-retour"></div>
+
+        <div id="cren-bloc" style="display:none">
+          <div class="creneaux-lbl">Choisir un créneau</div>
+          <div class="creneaux" id="cren"></div>
+        </div>
+
+        <div class="champ"><label>Demandes particulières</label><textarea id="f-note" rows="2" placeholder="Allergie, anniversaire, préférence de placement…"></textarea></div>
+        <button class="btn-valider" onclick="valider()">Confirmer la réservation</button>
+        <div class="notif" id="notif"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-corps">
+    <div>
+      <span class="footer-logo">SD Tamil Nadu</span>
+      <p class="footer-baseline">Une cuisine du sud de l'Inde, à Paris.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="#histoire">Histoire</a>
+      <a href="#menu">Menu</a>
+      <a href="#reservation">Réservation</a>
+    </nav>
+  </div>
+  <div class="footer-bas">
+    <span>© 2026 SD Tamil Nadu</span>
+    <span>Amiens, France</span>
+  </div>
+</footer>
+
+<script>
+/* ONGLETS MENU */
+function onglet(id, btn) {
+  document.querySelectorAll('.pane').forEach(p => p.style.display='none');
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('on'));
+  const pane = document.getElementById(id);
+  pane.style.display='flex'; pane.style.flexDirection='column';
+  btn.classList.add('on');
+  pane.querySelectorAll('[data-v]').forEach(el => { el.classList.remove('vis'); setTimeout(()=>el.classList.add('vis'),40); });
+}
+
+/* CALENDRIER */
+const MOIS = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+let cY=2026, cM=2, selDate=null, selCren=null;
+const resa={};
+
+function creneaux(s){ return s==='midi'?['12:00','12:30','13:00','13:30','14:00','14:30']:['19:00','19:30','20:00','20:30','21:00','21:30','22:00','22:30']; }
+
+function buildCal(){
+  document.getElementById('cal-lbl').textContent=MOIS[cM]+' '+cY;
+  const body=document.getElementById('cal-body'); body.innerHTML='';
+  const today=new Date();
+  const fd=(new Date(cY,cM,1).getDay()+6)%7;
+  const nd=new Date(cY,cM+1,0).getDate();
+  const svc=document.getElementById('f-serv').value;
+  const todayStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+  for(let i=0;i<fd;i++){const d=document.createElement('div');d.className='jour vide';body.appendChild(d);}
+  for(let n=1;n<=nd;n++){
+    const ds=`${cY}-${String(cM+1).padStart(2,'0')}-${String(n).padStart(2,'0')}`;
+    const dObj=new Date(cY,cM,n);
+    const d=document.createElement('div'); d.className='jour'; d.textContent=n;
+    if(dObj<new Date(today.getFullYear(),today.getMonth(),today.getDate())) d.classList.add('inact');
+    else {
+      const sl=creneaux(svc);
+      if(sl.every(s=>resa[ds+'|'+s])) d.classList.add('plein');
+      if(ds===todayStr) d.classList.add('auj');
+      if(ds===selDate) d.classList.add('choisi');
+      d.onclick=()=>pickDate(ds,n);
+    }
+    body.appendChild(d);
+  }
+}
+function navM(d){ cM+=d; if(cM>11){cM=0;cY++;} if(cM<0){cM=11;cY--;} buildCal(); }
+function pickDate(ds,n){
+  selDate=ds; selCren=null;
+  document.getElementById('cal-retour').textContent=n+' '+MOIS[cM]+' '+cY;
+  buildCal(); refrCren();
+}
+function refrCren(){
+  selCren=null;
+  const bloc=document.getElementById('cren-bloc');
+  if(!selDate){bloc.style.display='none';return;}
+  bloc.style.display='block';
+  const svc=document.getElementById('f-serv').value;
+  const sl=creneaux(svc);
+  const wrap=document.getElementById('cren'); wrap.innerHTML='';
+  sl.forEach(s=>{
+    const key=selDate+'|'+s;
+    const div=document.createElement('div'); div.className='creneau'; div.textContent=s;
+    if(resa[key]){div.classList.add('pris');div.title='Réservé — '+resa[key].nom;}
+    else { if(selCren===s) div.classList.add('actif'); div.onclick=()=>{selCren=s;refrCren();}; }
+    wrap.appendChild(div);
+  });
+}
+
+/* VALIDATION */
+function valider(){
+  const nom=document.getElementById('f-nom').value.trim();
+  const tel=document.getElementById('f-tel').value.trim();
+  const cvts=document.getElementById('f-cvts').value;
+  if(!nom) return msg('ko','Veuillez renseigner votre nom.');
+  if(!tel) return msg('ko','Veuillez renseigner votre téléphone.');
+  if(!cvts) return msg('ko','Veuillez sélectionner le nombre de couverts.');
+  if(!selDate) return msg('ko','Veuillez sélectionner une date.');
+  if(!selCren) return msg('ko','Veuillez choisir un créneau horaire.');
+  const key=selDate+'|'+selCren;
+  if(resa[key]) return msg('ko','Ce créneau est déjà réservé. Veuillez en choisir un autre.');
+  resa[key]={nom,tel,cvts};
+  const [y,m,d]=selDate.split('-');
+  msg('ok',`Réservation confirmée — ${nom}, le ${d}/${m}/${y} à ${selCren} (${cvts}).`);
+  journal(nom,d,m,y,selCren,cvts);
+  ['f-nom','f-tel','f-note'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('f-cvts').value='';
+  selDate=null; selCren=null;
+  document.getElementById('cal-retour').textContent='';
+  document.getElementById('cren-bloc').style.display='none';
+  buildCal();
+}
+function msg(type,txt){ const n=document.getElementById('notif'); n.className='notif '+type; n.textContent=txt; }
+function journal(nom,d,m,y,c,cvts){
+  const j=document.getElementById('journal');
+  const div=document.createElement('div'); div.className='log';
+  div.innerHTML=`<strong>${nom}</strong> — ${d}/${m}/${y} à ${c} · ${cvts}`;
+  j.prepend(div);
+}
+
+/* REVEAL */
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:0.07});
+document.querySelectorAll('[data-v]').forEach(el=>io.observe(el));
+
+buildCal();
+</script>
+</body>
+</html>
