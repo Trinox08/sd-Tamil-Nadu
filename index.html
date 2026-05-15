@@ -225,9 +225,20 @@ nav{
 .tab.on { background:var(--or); color:var(--noir); }
 .tab:hover:not(.on) { color:var(--creme); }
 .menu-liste { display:flex; flex-direction:column; }
-.entree {
-  display:grid; grid-template-columns:1fr auto; align-items:baseline; gap:24px;
-  padding:28px 0; border-bottom:1px solid var(--ligne); position:relative;
+  .menu-liste{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.entree{
+  background:white;
+  border-radius:var(--radius);
+  padding:34px;
+  border:none;
+
+  box-shadow:var(--ombre);
+
+  transition:.3s;
 }
 .entree:first-child { border-top:1px solid var(--ligne); }
 .entree::before {
