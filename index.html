@@ -87,12 +87,24 @@ nav{
 .nav-drawer a:hover { color:var(--or); }
 
 /* HERO */
-.hero {
-  height:100vh; display:grid; grid-template-columns:1fr 1fr; overflow:hidden;
+.hero{
+  min-height:100vh;
+  padding:140px 60px 80px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
+  align-items:center;
+
+  background:
+  linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.28)),
+  url('hero.jpg') center/cover no-repeat;
+
+  color:white;
 }
-.hero-left {
-  display:flex; flex-direction:column; justify-content:flex-end;
-  padding:0 70px 90px; position:relative; z-index:2;
+}
+.hero-left{
+  padding:0;
+}
 }
 .hero-eyebrow {
   font-size:0.62rem; letter-spacing:4px; text-transform:uppercase; color:var(--or);
