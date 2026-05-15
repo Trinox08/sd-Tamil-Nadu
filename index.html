@@ -265,54 +265,252 @@ nav{
 .p.on { background:var(--or); }
 
 /* RÉSERVATION */
+/* =========================
+   SECTION RÉSERVATION — STYLE BABO
+   ========================= */
+
 .resa-sec{
-  background:#161616;
-  color:white;
-}
-.resa-fond {
-  position:absolute; inset:0;
-  background:linear-gradient(140deg,#0f0d08 0%,#111010 55%,#0f0d08 100%);
-}
-.resa-fond::after {
-  content:''; position:absolute; top:-30%; right:-15%;
-  width:700px; height:700px; border-radius:50%;
-  background:radial-gradient(circle,rgba(184,135,42,0.055) 0%,transparent 65%);
-}
-.resa-rel { position:relative; z-index:1; }
-.resa-grille{
-  background:#1d1d1d;
-  border-radius:40px;
+  position:relative;
+  padding:140px 80px;
+  background:
+  linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.58)),
+  url('reservation.jpg') center/cover no-repeat;
   overflow:hidden;
 }
-.resa-g {
-  padding:80px 72px 80px 0; border-right:1px solid var(--ligne);
-  display:flex; flex-direction:column; justify-content:space-between;
-}
-.resa-manifeste { font-size:0.92rem; line-height:2; color:var(--gris); margin:28px 0 48px; }
-.resa-manifeste em { color:var(--creme); font-style:normal; }
-.h-titre { font-size:0.6rem; letter-spacing:3.5px; text-transform:uppercase; color:var(--or); margin-bottom:18px; }
-.h-row { display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--ligne); font-size:0.82rem; gap:12px; }
-.h-row .j { color:var(--gris); white-space:nowrap; }
-.h-row .h { font-family:'Cormorant',serif; font-style:italic; font-size:0.95rem; color:var(--creme); text-align:right; }
 
-.resa-d { padding:80px 0 80px 72px; }
-.form-titre { font-family:'Cormorant',serif; font-style:italic; font-size:1.75rem; color:var(--creme); margin-bottom:38px; }
-.champ { display:flex; flex-direction:column; gap:9px; margin-bottom:22px; }
-.champ label { font-size:0.58rem; letter-spacing:3px; text-transform:uppercase; color:var(--gris); }
-.champ input, .champ select, .champ textarea {
-  background:transparent; border:none; border-bottom:1px solid var(--ligne);
-  color:var(--creme); font-family:'Cormorant',serif; font-size:1.05rem; font-style:italic;
-  padding:10px 0; outline:none; transition:border-color .3s; width:100%;
+.resa-fond{
+  position:absolute;
+  inset:0;
+  background:
+  radial-gradient(circle at top right,
+  rgba(255,255,255,.06),
+  transparent 35%);
 }
+
+.resa-rel{
+  position:relative;
+  z-index:2;
+}
+
+/* CARD PRINCIPALE */
+
+.resa-grille{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+
+  background:rgba(20,20,20,.78);
+  backdrop-filter:blur(18px);
+
+  border-radius:38px;
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+  0 20px 80px rgba(0,0,0,.35);
+}
+
+/* COLONNE GAUCHE */
+
+.resa-g{
+  padding:80px 60px;
+  border-right:1px solid rgba(255,255,255,.08);
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.resa-manifeste{
+  margin:32px 0 46px;
+
+  font-size:.96rem;
+  line-height:2;
+
+  color:rgba(255,255,255,.68);
+}
+
+.resa-manifeste em{
+  color:white;
+  font-style:normal;
+}
+
+.h-titre{
+  font-size:.62rem;
+  letter-spacing:4px;
+  text-transform:uppercase;
+
+  color:#d5b07b;
+
+  margin-bottom:20px;
+}
+
+.h-row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+
+  padding:14px 0;
+
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.h-row .j{
+  color:rgba(255,255,255,.45);
+  font-size:.8rem;
+}
+
+.h-row .h{
+  color:white;
+
+  font-family:'Cormorant',serif;
+  font-style:italic;
+  font-size:1rem;
+}
+
+/* COLONNE DROITE */
+
+.resa-d{
+  padding:80px 60px;
+}
+
+.form-titre{
+  font-family:'Cormorant',serif;
+  font-size:2.3rem;
+  font-style:italic;
+  font-weight:300;
+
+  color:white;
+
+  margin-bottom:40px;
+}
+
+/* CHAMPS */
+
+.rangee{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+}
+
+.champ{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:24px;
+}
+
+.champ label{
+  font-size:.58rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+
+  color:rgba(255,255,255,.42);
+}
+
 .champ input,
 .champ select,
 .champ textarea{
-  border-bottom:1px solid rgba(255,255,255,.14);
+  width:100%;
+
+  background:transparent;
+
+  border:none;
+  border-bottom:1px solid rgba(255,255,255,.12);
+
+  padding:14px 0;
+
+  color:white;
+
+  font-size:1rem;
+  font-family:'Jost',sans-serif;
+
+  outline:none;
+
+  transition:.3s;
+}
+
+.champ input:focus,
+.champ select:focus,
+.champ textarea:focus{
+  border-color:#d6a76a;
+}
+
+.champ textarea{
+  resize:none;
+}
+
+.champ select{
+  appearance:none;
+  cursor:pointer;
+}
+
+.champ select option{
+  background:#1b1b1b;
   color:white;
 }
-.champ select option { background:var(--noir2); font-style:normal; }
-.champ textarea { resize:none; }
-.rangee { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+/* BOUTON */
+
+.btn-valider{
+  width:100%;
+
+  margin-top:10px;
+  padding:18px;
+
+  border:none;
+  border-radius:999px;
+
+  background:white;
+  color:black;
+
+  font-size:.72rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.btn-valider:hover{
+  transform:translateY(-2px);
+  background:#f3e4d2;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .resa-sec{
+    padding:90px 20px;
+  }
+
+  .resa-grille{
+    grid-template-columns:1fr;
+  }
+
+  .resa-g{
+    padding:50px 30px;
+    border-right:none;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+
+  .resa-d{
+    padding:50px 30px;
+  }
+
+  .rangee{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .form-titre{
+    font-size:1.9rem;
+  }
+
+}
 
 /* Calendrier */
 .cal { margin:26px 0 20px; border:1px solid var(--ligne); }
