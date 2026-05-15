@@ -28,13 +28,29 @@ body{
 } font-family:'Jost',sans-serif; font-weight:300; overflow-x:hidden; }
 
 /* NAV */
-nav {
-  position:fixed; inset:0 0 auto; z-index:99;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:0 60px; height:64px;
-  border-bottom:1px solid var(--ligne);
-  background:rgba(17,16,16,0.92);
-  backdrop-filter:blur(14px);
+nav{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  width:calc(100% - 40px);
+  max-width:1300px;
+  height:72px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 34px;
+
+  background:rgba(255,255,255,0.72);
+  backdrop-filter:blur(16px);
+
+  border:1px solid rgba(255,255,255,0.6);
+  border-radius:999px;
+
+  z-index:100;
+  box-shadow:var(--ombre);
 }
 .logo { font-family:'Cormorant Upright',serif; font-size:1.05rem; letter-spacing:5px; color:var(--or); text-decoration:none; text-transform:uppercase; }
 .nav-links { display:flex; gap:48px; list-style:none; }
