@@ -718,20 +718,62 @@ function pickDate(ds,n){
   buildCal(); refrCren();
 }
 function refrCren(){
-  selCren=null;
+
   const bloc=document.getElementById('cren-bloc');
-  if(!selDate){bloc.style.display='none';return;}
+
+  if(!selDate){
+    bloc.style.display='none';
+    return;
+  }
+
   bloc.style.display='block';
+
   const svc=document.getElementById('f-serv').value;
   const sl=creneaux(svc);
-  const wrap=document.getElementById('cren'); wrap.innerHTML='';
+
+  const wrap=document.getElementById('cren');
+  wrap.innerHTML='';
+
   sl.forEach(s=>{
+
     const key=selDate+'|'+s;
-    const div=document.createElement('div'); div.className='creneau'; div.textContent=s;
-    if(resa[key]){div.classList.add('pris');div.title='Réservé — '+resa[key].nom;}
-    else { if(selCren===s) div.classList.add('actif'); div.onclick=()=>{selCren=s;refrCren();}; }
+
+    const div=document.createElement('div');
+    div.className='creneau';
+    div.textContent=s;
+
+    // déjà réservé
+    if(resa[key]){
+
+      div.classList.add('pris');
+      div.title='Réservé — '+resa[key].nom;
+
+    } else {
+
+      // actif
+      if(selCren===s){
+        div.classList.add('actif');
+      }
+
+      // clic
+      div.addEventListener('click', ()=>{
+
+        selCren=s;
+
+        document.querySelectorAll('.creneau').forEach(c=>{
+          c.classList.remove('actif');
+        });
+
+        div.classList.add('actif');
+
+      });
+
+    }
+
     wrap.appendChild(div);
+
   });
+
 }
 
 /* VALIDATION */
