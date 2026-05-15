@@ -265,7 +265,10 @@ nav{
 .p.on { background:var(--or); }
 
 /* RÉSERVATION */
-.resa-sec { position:relative; overflow:hidden; }
+.resa-sec{
+  background:#161616;
+  color:white;
+}
 .resa-fond {
   position:absolute; inset:0;
   background:linear-gradient(140deg,#0f0d08 0%,#111010 55%,#0f0d08 100%);
@@ -276,7 +279,11 @@ nav{
   background:radial-gradient(circle,rgba(184,135,42,0.055) 0%,transparent 65%);
 }
 .resa-rel { position:relative; z-index:1; }
-.resa-grille { display:grid; grid-template-columns:1fr 1.2fr; min-height:580px; gap:0; }
+.resa-grille{
+  background:#1d1d1d;
+  border-radius:40px;
+  overflow:hidden;
+}
 .resa-g {
   padding:80px 72px 80px 0; border-right:1px solid var(--ligne);
   display:flex; flex-direction:column; justify-content:space-between;
@@ -297,9 +304,12 @@ nav{
   color:var(--creme); font-family:'Cormorant',serif; font-size:1.05rem; font-style:italic;
   padding:10px 0; outline:none; transition:border-color .3s; width:100%;
 }
-.champ input::placeholder { color:var(--gris); font-style:italic; }
-.champ input:focus, .champ select:focus, .champ textarea:focus { border-color:var(--or); }
-.champ select { cursor:pointer; appearance:none; }
+.champ input,
+.champ select,
+.champ textarea{
+  border-bottom:1px solid rgba(255,255,255,.14);
+  color:white;
+}
 .champ select option { background:var(--noir2); font-style:normal; }
 .champ textarea { resize:none; }
 .rangee { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
