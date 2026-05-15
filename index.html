@@ -264,7 +264,7 @@ nav{
 .p { width:5px; height:5px; border-radius:50%; background:rgba(184,135,42,0.2); }
 .p.on { background:var(--or); }
 
-/* RÉSERVATION */
+
 /* =========================
    SECTION RÉSERVATION — STYLE BABO
    ========================= */
@@ -513,28 +513,226 @@ nav{
 }
 
 /* Calendrier */
-.cal { margin:26px 0 20px; border:1px solid var(--ligne); }
-.cal-nav { display:flex; align-items:center; justify-content:space-between; padding:13px 18px; border-bottom:1px solid var(--ligne); }
-.cal-nav button { background:transparent; border:none; color:var(--or); cursor:pointer; font-size:1.1rem; width:36px; height:36px; display:flex; align-items:center; justify-content:center; opacity:0.65; transition:opacity .2s; }
-.cal-nav button:hover { opacity:1; }
-.cal-mois { font-family:'Cormorant Upright',serif; font-size:0.82rem; letter-spacing:3.5px; text-transform:uppercase; color:var(--creme); }
-.cal-ent { display:grid; grid-template-columns:repeat(7,1fr); border-bottom:1px solid var(--ligne); }
-.cal-ent span { padding:8px 0; text-align:center; font-size:0.56rem; letter-spacing:2px; text-transform:uppercase; color:var(--gris); }
-.cal-body { display:grid; grid-template-columns:repeat(7,1fr); }
-.jour {
-  aspect-ratio:1; display:flex; align-items:center; justify-content:center;
-  font-family:'Cormorant',serif; font-size:0.92rem; cursor:pointer;
-  border:1px solid transparent; margin:-0.5px; color:var(--gris);
-  transition:color .2s, border-color .2s; min-height:36px;
-}
-.jour:hover:not(.inact):not(.plein):not(.vide) { color:var(--or); border-color:var(--ligne); }
-.jour.auj { color:var(--creme); }
-.jour.choisi { background:var(--or); color:var(--noir) !important; border-color:var(--or); }
-.jour.plein { opacity:0.28; cursor:not-allowed; text-decoration:line-through; }
-.jour.inact { color:#2e2a26; cursor:not-allowed; }
-.jour.vide { cursor:default; }
-.cal-retour { font-size:0.7rem; color:var(--or); letter-spacing:1.5px; min-height:18px; margin-bottom:18px; }
+/* =========================
+   CALENDRIER — STYLE BABO
+   ========================= */
 
+.cal{
+  margin:34px 0 24px;
+
+  background:rgba(255,255,255,.04);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:28px;
+
+  overflow:hidden;
+
+  backdrop-filter:blur(12px);
+}
+
+/* HEADER */
+
+.cal-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:18px 22px;
+
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.cal-nav button{
+  width:42px;
+  height:42px;
+
+  border:none;
+  border-radius:50%;
+
+  background:rgba(255,255,255,.04);
+
+  color:white;
+
+  cursor:pointer;
+
+  font-size:1.2rem;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transition:.25s;
+}
+
+.cal-nav button:hover{
+  background:white;
+  color:black;
+  transform:scale(1.04);
+}
+
+.cal-mois{
+  font-family:'Cormorant Upright',serif;
+
+  font-size:.78rem;
+  letter-spacing:4px;
+  text-transform:uppercase;
+
+  color:white;
+}
+
+/* JOURS */
+
+.cal-ent{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+
+  padding:8px 10px;
+
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.cal-ent span{
+  text-align:center;
+
+  padding:10px 0;
+
+  font-size:.52rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  color:rgba(255,255,255,.35);
+}
+
+/* BODY */
+
+.cal-body{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+
+  gap:6px;
+
+  padding:14px;
+}
+
+/* CELLULE */
+
+.jour{
+  aspect-ratio:1;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height:46px;
+
+  border-radius:16px;
+
+  font-family:'Cormorant',serif;
+  font-size:1rem;
+
+  color:rgba(255,255,255,.7);
+
+  cursor:pointer;
+
+  transition:.22s;
+}
+
+/* HOVER */
+
+.jour:hover:not(.inact):not(.plein):not(.vide){
+  background:rgba(255,255,255,.08);
+  color:white;
+}
+
+/* AUJOURD'HUI */
+
+.jour.auj{
+  border:1px solid rgba(255,255,255,.18);
+  color:white;
+}
+
+/* DATE CHOISIE */
+
+.jour.choisi{
+  background:white;
+  color:black !important;
+
+  font-weight:600;
+
+  box-shadow:
+  0 8px 24px rgba(255,255,255,.18);
+}
+
+/* RÉSERVÉ */
+
+.jour.plein{
+  opacity:.2;
+  cursor:not-allowed;
+  text-decoration:line-through;
+}
+
+/* INACTIF */
+
+.jour.inact{
+  opacity:.12;
+  cursor:not-allowed;
+}
+
+/* VIDE */
+
+.jour.vide{
+  cursor:default;
+}
+
+/* TEXTE RETOUR */
+
+.cal-retour{
+  margin-top:14px;
+
+  font-size:.74rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  color:#d8b17a;
+
+  min-height:18px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .cal{
+    border-radius:24px;
+  }
+
+  .cal-body{
+    gap:4px;
+    padding:10px;
+  }
+
+  .jour{
+    min-height:40px;
+    font-size:.92rem;
+    border-radius:12px;
+  }
+
+  .cal-nav{
+    padding:14px 16px;
+  }
+
+  .cal-nav button{
+    width:38px;
+    height:38px;
+  }
+
+  .cal-mois{
+    font-size:.68rem;
+    letter-spacing:3px;
+  }
+
+}
 /* Créneaux */
 .creneaux-lbl { font-size:0.58rem; letter-spacing:3px; text-transform:uppercase; color:var(--gris); margin-bottom:12px; }
 .creneaux { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:26px; }
