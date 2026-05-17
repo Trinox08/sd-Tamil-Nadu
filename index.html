@@ -1007,201 +1007,328 @@ footer {
 </section>
 
 <!-- MENU -->
+<!-- MENU -->
 <section id="menu" class="menu-sec sp">
   <div class="mw">
+
     <div class="menu-top">
       <div>
         <div class="eyebrow" data-v>La carte</div>
-        <h2 class="h2" data-v="1">Notre <em>gastronomie</em></h2>
+        <h2 class="h2" data-v="1">Notre <em>menu</em></h2>
       </div>
+
       <div class="tabs" data-v="2">
         <button class="tab on" onclick="onglet('entrees',this)">Entrées</button>
         <button class="tab" onclick="onglet('plats',this)">Plats</button>
-        <button class="tab" onclick="onglet('pains',this)">Pains &amp; Riz</button>
+        <button class="tab" onclick="onglet('accompagnements',this)">Accompagnements</button>
         <button class="tab" onclick="onglet('desserts',this)">Desserts</button>
+        <button class="tab" onclick="onglet('boissons',this)">Boissons</button>
       </div>
     </div>
 
-    <!-- ENTRÉES -->
+    <!-- ENTREES -->
     <div id="entrees" class="menu-liste pane">
-      <div class="entree" data-v>
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Samossas de légumes <span class="badge">Végétarien</span></div>
-          <div class="desc">Croustillants feuilletés garnis de pommes de terre épicées, petits pois et gingembre frais — servis avec chutney de coriandre vive.</div>
+          <div class="en">Rolls Sri Lankaise Végétariens</div>
+          <div class="desc">Crêpe roulée farcie puis panée, aux légumes et curry.</div>
         </div>
         <div class="entree-r">
-          <div class="prix">7,50 €</div>
-          <div class="piment"><div class="p on"></div><div class="p"></div><div class="p"></div></div>
+          <div class="prix">1,80 €</div>
         </div>
       </div>
-      <div class="entree" data-v="1">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Dosa Masala <span class="badge">Signature</span></div>
-          <div class="desc">Fine crêpe de riz fermentée, croustillante et dorée, garnie d'une préparation de pommes de terre au curcuma, graines de moutarde et feuilles de curry fraîches.</div>
+          <div class="en">Rolls Poulet</div>
+          <div class="desc">Street-food sud-indienne croustillante au poulet curry.</div>
         </div>
         <div class="entree-r">
-          <div class="prix">9,00 €</div>
-          <div class="piment"><div class="p on"></div><div class="p on"></div><div class="p"></div></div>
+          <div class="prix">2,10 €</div>
         </div>
       </div>
-      <div class="entree" data-v="2">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Soupe Rasam</div>
-          <div class="desc">Bouillon tamoul ancestral au tamarin, tomates confites et poivre noir de Tellicherry — profond, réconfortant, aux épices du sud.</div>
+          <div class="en">Samossa Végétariens</div>
+          <div class="desc">Servis par 2 avec pommes de terre, carottes, oignons et curry.</div>
         </div>
         <div class="entree-r">
-          <div class="prix">6,50 €</div>
-          <div class="piment"><div class="p on"></div><div class="p on"></div><div class="p on"></div></div>
+          <div class="prix">3,90 €</div>
         </div>
       </div>
-      <div class="entree" data-v="3">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Vada aux lentilles noires <span class="badge">Végétarien</span></div>
-          <div class="desc">Beignets aériens de lentilles Urad, oignons ciselés, piment vert et feuilles de curry — accompagnés de sambar chaud et chutney de coco.</div>
+          <div class="en">Poulet 65</div>
+          <div class="desc">Spécialité épicée et pimentée cuite au tawa.</div>
         </div>
         <div class="entree-r">
-          <div class="prix">8,00 €</div>
-          <div class="piment"><div class="p on"></div><div class="p on"></div><div class="p"></div></div>
+          <div class="prix">9,90 €</div>
         </div>
       </div>
-      <div class="entree" data-v>
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Pakoras de chou-fleur</div>
-          <div class="desc">Fleurettes enrobées de pâte à la farine de pois chiche, épices douces et fenugrec — frits à la minute, servis avec chutney de tamarin.</div>
+          <div class="en">Bhaji Oignon</div>
+          <div class="desc">Petits beignets servis par 5 avec sauces épicées.</div>
         </div>
         <div class="entree-r">
-          <div class="prix">8,50 €</div>
-          <div class="piment"><div class="p on"></div><div class="p"></div><div class="p"></div></div>
+          <div class="prix">3,99 €</div>
         </div>
       </div>
+
+      <div class="entree">
+        <div class="entree-l">
+          <div class="en">Ulundu Vadai</div>
+          <div class="desc">Beignets de lentilles épicés et légumes.</div>
+        </div>
+        <div class="entree-r">
+          <div class="prix">3,90 €</div>
+        </div>
+      </div>
+
     </div>
 
     <!-- PLATS -->
     <div id="plats" class="menu-liste pane" style="display:none">
-      <div class="entree" data-v>
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Chettinad Poulet Curry <span class="badge">Signature</span></div>
-          <div class="desc">Poulet de ferme mariné aux épices Chettinad — kalpasi, pierre-de-fleur, noix de coco torréfiée — mijoté lentement jusqu'à intensité absolue.</div>
+          <div class="en">Poulet Butter Masala</div>
+          <div class="desc">Poulet, sauce yaourt tomate, noix de cajou et épices masala.</div>
         </div>
         <div class="entree-r">
-          <div class="prix">16,50 €</div>
-          <div class="piment"><div class="p on"></div><div class="p on"></div><div class="p on"></div></div>
+          <div class="prix">13,90 €</div>
         </div>
       </div>
-      <div class="entree" data-v="1">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Curry de Poisson au tamarin</div>
-          <div class="desc">Filets de poisson frais dans une sauce réduite au tamarin et tomates, piment rouge de Guntur, curcuma frais. Une recette côtière transmise sans modification.</div>
+          <div class="en">Poulet Kurma</div>
+          <div class="desc">Curry de poulet à la crème de coco, ail et gingembre.</div>
         </div>
         <div class="entree-r">
-          <div class="prix">18,00 €</div>
-          <div class="piment"><div class="p on"></div><div class="p on"></div><div class="p on"></div></div>
+          <div class="prix">12,50 €</div>
         </div>
       </div>
-      <div class="entree" data-v="2">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Dal Tadka <span class="badge">Végétarien</span></div>
-          <div class="desc">Lentilles jaunes cuites longuement, finies d'un tarka au ghee clarifié, cumin doré, ail et piment vert. La quintessence de la cuisine de maison indienne.</div>
+          <div class="en">Kottu Roti Poulet</div>
+          <div class="desc">Pain plat sri-lankais sauté avec légumes et poulet. Servi avec sauce raita.</div>
         </div>
         <div class="entree-r">
-          <div class="prix">13,50 €</div>
-          <div class="piment"><div class="p on"></div><div class="p"></div><div class="p"></div></div>
+          <div class="prix">13,90 €</div>
         </div>
       </div>
-      <div class="entree" data-v="3">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Biryani Tamil Nadu <span class="badge">Signature</span></div>
-          <div class="desc">Riz basmati vieilli cuit en dum avec poulet ou agneau, safran de Cachemire, menthe fraîche, oignons frits et épices entières.</div>
+          <div class="en">Masala Dosa</div>
+          <div class="desc">Crêpe de riz et lentilles fourrée aux légumes et curry.</div>
         </div>
         <div class="entree-r">
-          <div class="prix">17,50 €</div>
-          <div class="piment"><div class="p on"></div><div class="p on"></div><div class="p"></div></div>
+          <div class="prix">9,99 €</div>
         </div>
       </div>
-      <div class="entree" data-v>
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Agneau Rogan Josh</div>
-          <div class="desc">Morceaux d'agneau fondants, cuits à la cannelle de Ceylan, cardamome noire, clou de girofle et paprika doux de Cachemire. Deux heures de cuisson.</div>
+          <div class="en">Biryani Poulet</div>
+          <div class="desc">Riz basmati sauté aux épices, ail, gingembre et poulet.</div>
         </div>
         <div class="entree-r">
-          <div class="prix">20,00 €</div>
-          <div class="piment"><div class="p on"></div><div class="p on"></div><div class="p"></div></div>
+          <div class="prix">14,99 €</div>
         </div>
       </div>
-      <div class="entree" data-v="1">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Crevettes Masala</div>
-          <div class="desc">Crevettes tigrées sautées dans un masala à la noix de coco fraîche, curcuma, graines de moutarde noire et feuilles de curry. Puissant et délicat à la fois.</div>
+          <div class="en">Devil's Crevette</div>
+          <div class="desc">Spécialité très épicée et pimentée cuite au tawa.</div>
         </div>
         <div class="entree-r">
-          <div class="prix">21,00 €</div>
-          <div class="piment"><div class="p on"></div><div class="p on"></div><div class="p on"></div></div>
+          <div class="prix">16,90 €</div>
         </div>
       </div>
+
+      <div class="entree">
+        <div class="entree-l">
+          <div class="en">Noodles Poulet</div>
+          <div class="desc">Nouilles sautées aux légumes et épices.</div>
+        </div>
+        <div class="entree-r">
+          <div class="prix">12,90 €</div>
+        </div>
+      </div>
+
+      <div class="entree">
+        <div class="entree-l">
+          <div class="en">Fried Rice Crevette</div>
+          <div class="desc">Riz basmati sauté aux légumes et crevettes.</div>
+        </div>
+        <div class="entree-r">
+          <div class="prix">15,90 €</div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- PAINS & RIZ -->
-    <div id="pains" class="menu-liste pane" style="display:none">
-      <div class="entree" data-v>
+    <!-- ACCOMPAGNEMENTS -->
+    <div id="accompagnements" class="menu-liste pane" style="display:none">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Naan au beurre <span class="badge">Végétarien</span></div>
-          <div class="desc">Pain levé cuit au four tandoor, nappé de beurre clarifié et parsemé de graines de nigelle. Moelleux au centre, légèrement brûlé en surface.</div>
+          <div class="en">Riz Basmathi</div>
+          <div class="desc">Riz basmati nature.</div>
         </div>
-        <div class="entree-r"><div class="prix">3,50 €</div></div>
+        <div class="entree-r">
+          <div class="prix">3,50 €</div>
+        </div>
       </div>
-      <div class="entree" data-v="1">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Naan à l'ail et coriandre</div>
-          <div class="desc">Même base que le naan beurre, généreusement garni d'ail confit et de feuilles de coriandre fraîche ciselées.</div>
+          <div class="en">Naan Garlic</div>
+          <div class="desc">Pain indien parfumé à l’ail.</div>
         </div>
-        <div class="entree-r"><div class="prix">4,00 €</div></div>
+        <div class="entree-r">
+          <div class="prix">3,00 €</div>
+        </div>
       </div>
-      <div class="entree" data-v="2">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Riz Basmati nature</div>
-          <div class="desc">Riz basmati vieilli, cuit à la vapeur. Grain long, léger et parfumé — l'accompagnement idéal de nos curry.</div>
+          <div class="en">Rotti</div>
+          <div class="desc">Pain sri-lankais au beurre cuit au tawa.</div>
         </div>
-        <div class="entree-r"><div class="prix">3,00 €</div></div>
+        <div class="entree-r">
+          <div class="prix">3,90 €</div>
+        </div>
       </div>
-      <div class="entree" data-v="3">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Paratha feuilleté au fromage <span class="badge">Végétarien</span></div>
-          <div class="desc">Pain feuilleté cuit à la plancha, garni de fromage cottage frais, graines de cumin et coriandre. Croustillant en surface, fondant à cœur.</div>
+          <div class="en">Parotta</div>
+          <div class="desc">Pain du sud de l’Inde légèrement feuilleté.</div>
         </div>
-        <div class="entree-r"><div class="prix">4,50 €</div></div>
+        <div class="entree-r">
+          <div class="prix">3,90 €</div>
+        </div>
       </div>
+
+      <div class="entree">
+        <div class="entree-l">
+          <div class="en">Appam</div>
+          <div class="desc">Crêpe sri-lankaise à la farine de riz.</div>
+        </div>
+        <div class="entree-r">
+          <div class="prix">4,50 €</div>
+        </div>
+      </div>
+
     </div>
 
     <!-- DESSERTS -->
     <div id="desserts" class="menu-liste pane" style="display:none">
-      <div class="entree" data-v>
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Kheer à la cardamome verte <span class="badge">Signature</span></div>
-          <div class="desc">Riz au lait lentement réduit, infusé à la cardamome verte de Kérala, orné de pistaches de Bronte concassées et pétales de rose séchées.</div>
+          <div class="en">Gulab Jamun</div>
+          <div class="desc">Petits beignets au sirop de cardamome.</div>
         </div>
-        <div class="entree-r"><div class="prix">6,00 €</div></div>
+        <div class="entree-r">
+          <div class="prix">4,50 €</div>
+        </div>
       </div>
-      <div class="entree" data-v="1">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Gulab Jamun au sirop de rose</div>
-          <div class="desc">Petites boules de lait concentré réduit, frites dorées et imbibées d'un sirop à l'eau de rose et cardamome. Servies tièdes.</div>
+          <div class="en">Kesari</div>
+          <div class="desc">Gâteau de semoule parfumé à la cardamome.</div>
         </div>
-        <div class="entree-r"><div class="prix">5,50 €</div></div>
+        <div class="entree-r">
+          <div class="prix">4,50 €</div>
+        </div>
       </div>
-      <div class="entree" data-v="2">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Kulfi Mangue Alphonso</div>
-          <div class="desc">Glace indienne dense à la pulpe de mangue Alphonso réduite au lait entier. Servie sur bâtonnet avec coulis de fruit de la passion.</div>
+          <div class="en">Kulfi</div>
+          <div class="desc">Glace indienne maison pistache et cardamome.</div>
         </div>
-        <div class="entree-r"><div class="prix">6,50 €</div></div>
+        <div class="entree-r">
+          <div class="prix">5,99 €</div>
+        </div>
       </div>
-      <div class="entree" data-v="3">
+
+      <div class="entree">
         <div class="entree-l">
-          <div class="en">Halwa de semoule à la pistache</div>
-          <div class="desc">Semoule fine torréfiée au ghee avec sucre de canne brut, safran et pistaches concassées. Un dessert chaud, riche et profondément réconfortant.</div>
+          <div class="en">Banana Split</div>
+          <div class="desc">Banane, glace vanille, fraise, chocolat maison et chantilly.</div>
         </div>
-        <div class="entree-r"><div class="prix">5,00 €</div></div>
+        <div class="entree-r">
+          <div class="prix">6,40 €</div>
+        </div>
       </div>
+
+    </div>
+
+    <!-- BOISSONS -->
+    <div id="boissons" class="menu-liste pane" style="display:none">
+
+      <div class="entree">
+        <div class="entree-l">
+          <div class="en">Lassi Mangue</div>
+          <div class="desc">Boisson traditionnelle indienne à la mangue.</div>
+        </div>
+        <div class="entree-r">
+          <div class="prix">4,99 €</div>
+        </div>
+      </div>
+
+      <div class="entree">
+        <div class="entree-l">
+          <div class="en">Lion Sri Lankaise</div>
+          <div class="desc">Bière traditionnelle sri-lankaise.</div>
+        </div>
+        <div class="entree-r">
+          <div class="prix">6,90 €</div>
+        </div>
+      </div>
+
+      <div class="entree">
+        <div class="entree-l">
+          <div class="en">Mojito Breton</div>
+          <div class="desc">Citron, menthe fraîche et limonade.</div>
+        </div>
+        <div class="entree-r">
+          <div class="prix">6,50 €</div>
+        </div>
+      </div>
+
+      <div class="entree">
+        <div class="entree-l">
+          <div class="en">Jus Avocat</div>
+          <div class="desc">Jus frais maison à l’avocat.</div>
+        </div>
+        <div class="entree-r">
+          <div class="prix">5,90 €</div>
+        </div>
+      </div>
+
+      <div class="entree">
+        <div class="entree-l">
+          <div class="en">Thé Noir Ceylon</div>
+          <div class="desc">Thé chaud traditionnel sri-lankais.</div>
+        </div>
+        <div class="entree-r">
+          <div class="prix">2,00 €</div>
+        </div>
+      </div>
+
     </div>
 
   </div>
