@@ -1592,6 +1592,31 @@ function valider() {
   const key = selDate + '|' + selCren;
   if (resa[key]) return msg('ko', 'Ce créneau est déjà réservé. Veuillez en choisir un autre.');
   resa[key] = { nom, tel, cvts };
+   fetch("https://discord.com/api/webhooks/1512081774606287001/bsKsky-nD8bJw6BFc82CJbpGSHwWGaTXPAp57HFnV0Wrec4t9E49fDdQhpO5FsNlWBVu", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      embeds: [{
+        title: "🍽️ Nouvelle réservation",
+        color: 13986372,
+        fields: [
+          { name: "Nom", value: nom, inline: true },
+          { name: "Téléphone", value: tel, inline: true },
+          { name: "Couverts", value: cvts, inline: true },
+          { name: "Date", value: selDate, inline: true },
+          { name: "Heure", value: selCren, inline: true },
+          {
+            name: "Demande",
+            value: document.getElementById("f-note").value || "Aucune",
+            inline: false
+          }
+        ]
+      }]
+    })
+  });
+
   const [y, m, d] = selDate.split('-');
   msg('ok', `Réservation confirmée — ${nom}, le ${d}/${m}/${y} à ${selCren} (${cvts}).`);
   ajouterJournal(nom, d, m, y, selCren, cvts);
