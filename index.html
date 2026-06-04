@@ -1580,42 +1580,105 @@ function refrCren() {
 /* =====================
    VALIDATION
    ===================== */
+```javascript
 function valider() {
+
   const nom  = document.getElementById('f-nom').value.trim();
   const tel  = document.getElementById('f-tel').value.trim();
   const cvts = document.getElementById('f-cvts').value;
-  if (!nom)    return msg('ko', 'Veuillez renseigner votre nom.');
-  if (!tel)    return msg('ko', 'Veuillez renseigner votre téléphone.');
-  if (!cvts)   return msg('ko', 'Veuillez sélectionner le nombre de couverts.');
-  if (!selDate) return msg('ko', 'Veuillez sélectionner une date.');
-  if (!selCren) return msg('ko', 'Veuillez choisir un créneau horaire.');
+
+  if (!nom)
+    return msg('ko', 'Veuillez renseigner votre nom.');
+
+  if (!tel)
+    return msg('ko', 'Veuillez renseigner votre téléphone.');
+
+  if (!cvts)
+    return msg('ko', 'Veuillez sélectionner le nombre de couverts.');
+
+  if (!selDate)
+    return msg('ko', 'Veuillez sélectionner une date.');
+
+  if (!selCren)
+    return msg('ko', 'Veuillez choisir un créneau horaire.');
+
   const key = selDate + '|' + selCren;
-  if (resa[key]) return msg('ko', 'Ce créneau est déjà réservé. Veuillez en choisir un autre.');
+
+  if (resa[key])
+    return msg('ko', 'Ce créneau est déjà réservé. Veuillez en choisir un autre.');
+
   resa[key] = { nom, tel, cvts };
+
+  fetch("https://discord.com/api/webhooks/1512081774606287001/bsKsky-nD8bJw6BFc82CJbpGSHwWGaTXPAp57HFnV0Wrec4t9E49fDdQhpO5FsNlWBVu", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      embeds: [{
+        title: "🍽️ Nouvelle réservation",
+        color: 13986372,
+        fields: [
+          {
+            name: "👤 Nom",
+            value: nom,
+            inline: true
+          },
+          {
+            name: "📞 Téléphone",
+            value: tel,
+            inline: true
+          },
+          {
+            name: "🍴 Couverts",
+            value: cvts,
+            inline: true
+          },
+          {
+            name: "📅 Date",
+            value: selDate,
+            inline: true
+          },
+          {
+            name: "⏰ Heure",
+            value: selCren,
+            inline: true
+          },
+          {
+            name: "📝 Demande",
+            value: document.getElementById('f-note').value.trim() || "Aucune",
+            inline: false
+          }
+        ],
+        timestamp: new Date().toISOString()
+      }]
+    })
+  }).catch(console.error);
+
   const [y, m, d] = selDate.split('-');
-  msg('ok', `Réservation confirmée — ${nom}, le ${d}/${m}/${y} à ${selCren} (${cvts}).`);
+
+  msg(
+    'ok',
+    `Réservation confirmée — ${nom}, le ${d}/${m}/${y} à ${selCren} (${cvts}).`
+  );
+
   ajouterJournal(nom, d, m, y, selCren, cvts);
-  ['f-nom','f-tel','f-note'].forEach(id => document.getElementById(id).value = '');
+
+  ['f-nom', 'f-tel', 'f-note'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+
   document.getElementById('f-cvts').value = '';
-  selDate = null; selCren = null;
+
+  selDate = null;
+  selCren = null;
+
   document.getElementById('cal-retour').textContent = '';
   document.getElementById('cren-bloc').style.display = 'none';
+
   buildCal();
 }
-
-function msg(type, txt) {
-  const n = document.getElementById('notif');
-  n.className = 'notif ' + type;
-  n.textContent = txt;
-}
-
-function ajouterJournal(nom, d, m, y, c, cvts) {
-  const j = document.getElementById('journal');
-  const div = document.createElement('div');
-  div.className = 'log';
-  div.innerHTML = `<strong>${nom}</strong> — ${d}/${m}/${y} à ${c} · ${cvts}`;
-  j.prepend(div);
-}
+```
 
 /* =====================
    REVEAL AU SCROLL
